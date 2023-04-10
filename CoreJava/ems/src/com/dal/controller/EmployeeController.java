@@ -9,7 +9,7 @@ import com.dal.model.Employee;
 
 public class EmployeeController implements EmployeeInterface {
 	Employee emp;
-	List emplist = new ArrayList();
+	List<Employee> emplist = new ArrayList();
 	public void addEmployee() throws IOException
 	{	
 		emp = new Employee();
@@ -27,12 +27,15 @@ public class EmployeeController implements EmployeeInterface {
 	}
 	
 	public void viewEmployee() {
-		Iterator i = emplist.iterator();
+		/*Iterator i = emplist.iterator();
 		while(i.hasNext()) {
 			System.out.println(i.next());
 		//System.out.println(emp);
+		 }*/
+			
+			emplist.forEach(emplst -> System.out.println(emplst));
 	}
-}
+
 	
 	public void serialize() throws IOException
 	{
