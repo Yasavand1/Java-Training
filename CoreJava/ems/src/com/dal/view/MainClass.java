@@ -1,9 +1,12 @@
 package com.dal.view;
 
 import java.util.Scanner;
+import java.util.function.BiPredicate;
 import java.io.*;
 import com.dal.controller.*;
 import com.dal.exception.*;
+import java.util.function.*;
+
 
 import com.dal.controller.EmployeeController;
 //import com.dal.model.Employee;
@@ -17,15 +20,21 @@ public class MainClass {
 try {
 	String uname=null;
 	String pwd = null;
+	Predicate<User> auth = u->u.userName.equals("yasvand") && u.pwd.equals("password");
 	InputStreamReader isr = new InputStreamReader(System.in);
 	BufferedReader br = new BufferedReader(isr);
 	System.out.println("Enter Username:");
 	uname=br.readLine();
 	System.out.println("Enter password:");
 	pwd= br.readLine();
+	User user=new User(uname,pwd);
+	
+    
 
-	if(uname.equals("deeps") && pwd.equals("pass"))
+	//if(uname.equals("deeps") && pwd.equals("pass"))
+	if(auth.test(user))
 	{
+		System.out.println("Valid User");
 		System.out.println("Welcome " + uname);
 		System.out.println("Welcome");
 		EmployeeController ec = new EmployeeController();
@@ -83,6 +92,7 @@ try {
 		System.exit(0);
 	}
 	else{
+		System.out.println("Invalid User");
 		throw new com.dal.exception.UserException();
 	}
 	
@@ -95,4 +105,14 @@ catch(com.dal.exception.UserException unf)
 
 	}
 
+}
+
+class User{
+    String userName;
+    String pwd;
+    
+    User(String userName,String pwd){
+        this.userName=userName;
+        this.pwd=pwd;
+    }
 }
