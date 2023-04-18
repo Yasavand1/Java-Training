@@ -1,0 +1,16 @@
+174. List the empno, ename, Sal, Grade of all emps who belongs to the grade 3 or 4
+
+SELECT e.empno,e.ename,e.sal,sg.grade FROM emp e JOIN salgrade sg
+ON E.sal BETWEEN sg.losal AND sg.hisal and sg.grade in (3,4);
+
+
+175. List the Empno, Ename, Sal, Grade of all emps working for the mgrs 7788, 7369, 7566.
+
+select empno, ename, sal from emp where mgr in (7788, 7369, 7566);
+
+
+176. List all the Grade 3 ‘Analysis and ‘managers’ in the asc order of Job.
+
+select * from emp
+inner join salgrade sg on emp.sal between sg.losal AND sg.hisal
+where emp.job in ('ANALYST', 'MANAGER') and sg.grade = 3
