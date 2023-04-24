@@ -1,0 +1,18 @@
+Use case for Singleton
+
+*If we have license for only one connection for our database or our JDBC driver has trouble with multithreading, 
+the Singleton makes sure that only one connection is made or that only one thread can access the connection at a time.
+
+
+
+Use case for Prototype
+
+*In UI whenever filter needs to be done,the result fetched from API will be cloned and used. When filter is removed, 
+then UI will use the original result which got fetched from API. By Cloning cost of DB fetch is reduced.
+
+
+Use case for Builder
+
+*Two friends visiting a Burger shop and each ordering burger based on their interest.There they notice that burger making involves different processes 
+like toasting the bread, creating patty for burger, making sauces and then everything is put together. 
+In Programming Builder concept comes into picture in this point. Builder pattern separates the construction of a complex object from its representation.
