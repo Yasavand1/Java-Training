@@ -1,0 +1,22 @@
++---------------------------------------+           +-----------------------+
+|               Doctor                  |           |      Appointment      |
++---------------------------------------+           +-----------------------+
+| - id: int                             |           | - id: int             |
+| - name: String                        |           | - date: Date          |
+| - specialty: String                   |           | - time: Time          |
+| - availability: Map<Date, List<Time>> |           | - patientName: String |
+| - appointments: List<Appointment>     |           | - doctor: Doctor      |
++---------------------------------------+           +-----------------------+
+        ^                              ^
+        |                              |
++-----------------+           +-----------------------------------+
+|     Patient     |           |            Schedule               |
++-----------------+           +-----------------------------------+
+| - id: int       |           | - appointments: List<Appointment> |
+| - name: String  |           +-----------------------------------+
+| - email: String |
++-----------------+
+
+
+
+
