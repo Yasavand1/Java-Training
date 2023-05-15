@@ -1,0 +1,5 @@
+com\deeps\rabbitmqdemo01\dto\BookStatus.class
+com\deeps\rabbitmqdemo01\dto\Booking.class
+com\deeps\rabbitmqdemo01\config\MessagingConfig.class
+com\deeps\rabbitmqdemo01\producer\BookAutoTraveller.class
+com\deeps\rabbitmqdemo01\Rabbitmqdemo01Application.class
